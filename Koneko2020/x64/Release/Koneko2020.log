@@ -1,0 +1,12 @@
+﻿Koneko2020.obj : error LNK2001: 外部シンボル "__imp_WSAGetLastError" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_htons" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_recv" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_socket" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_send" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_WSAStartup" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_listen" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_closesocket" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_bind" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_accept" は未解決です。
+Koneko2020.obj : error LNK2001: 外部シンボル "__imp_WSACleanup" は未解決です。
+D:\vs2019\Koneko2020\x64\Release\Koneko2020.exe : fatal error LNK1120: 11 件の未解決の外部参照

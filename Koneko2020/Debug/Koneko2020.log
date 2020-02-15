@@ -1,0 +1,14 @@
+﻿  Koneko2020.cpp
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(516,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(523,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(532,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(568,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(575,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(607,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(614,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(623,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(659,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(666,26): warning C4101: 'e': ローカル変数は 1 度も使われていません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(1585,7): warning C4102: 'TO_TWO': ラベルは 1 度も参照されません。
+D:\vs2019\Koneko2020\Koneko2020\Koneko2020.cpp(1413,9): warning C4101: 'n': ローカル変数は 1 度も使われていません。
+  Koneko2020.vcxproj -> D:\vs2019\Koneko2020\Debug\Koneko2020.exe

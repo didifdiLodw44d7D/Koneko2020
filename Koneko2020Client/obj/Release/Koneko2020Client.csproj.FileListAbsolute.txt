@@ -1,0 +1,12 @@
+D:\vs2019\Koneko2020\Koneko2020Client\bin\Release\Koneko2020Client.exe.config
+D:\vs2019\Koneko2020\Koneko2020Client\bin\Release\Koneko2020Client.exe
+D:\vs2019\Koneko2020\Koneko2020Client\bin\Release\Koneko2020Client.pdb
+D:\vs2019\Koneko2020\Koneko2020Client\bin\Release\Newtonsoft.Json.dll
+D:\vs2019\Koneko2020\Koneko2020Client\bin\Release\Newtonsoft.Json.xml
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.Form1.resources
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.Form2.resources
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.Properties.Resources.resources
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.csproj.GenerateResource.cache
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.csproj.CopyComplete
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.exe
+D:\vs2019\Koneko2020\Koneko2020Client\obj\Release\Koneko2020Client.pdb

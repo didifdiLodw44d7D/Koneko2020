@@ -1,0 +1,9 @@
+D:\vs2019\Koneko2020\JsonParser\bin\Debug\JsonParser.exe.config
+D:\vs2019\Koneko2020\JsonParser\bin\Debug\JsonParser.exe
+D:\vs2019\Koneko2020\JsonParser\bin\Debug\JsonParser.pdb
+D:\vs2019\Koneko2020\JsonParser\obj\Debug\JsonParser.csprojAssemblyReference.cache
+D:\vs2019\Koneko2020\JsonParser\obj\Debug\JsonParser.exe
+D:\vs2019\Koneko2020\JsonParser\obj\Debug\JsonParser.pdb
+D:\vs2019\Koneko2020\JsonParser\bin\Debug\Newtonsoft.Json.dll
+D:\vs2019\Koneko2020\JsonParser\bin\Debug\Newtonsoft.Json.xml
+D:\vs2019\Koneko2020\JsonParser\obj\Debug\JsonParser.csproj.CopyComplete
