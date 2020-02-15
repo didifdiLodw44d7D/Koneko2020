@@ -24,8 +24,8 @@
 ### スナップショット
 
 #### ボード画面
-![Koneko2020](https://user-images.githubusercontent.com/10706020/74589055-59eea900-5045-11ea-9ef1-174814923b13.png)
+![input](https://user-images.githubusercontent.com/10706020/74589055-59eea900-5045-11ea-9ef1-174814923b13.png)
 
 #### インプット・インターフェース画面
-![Koneko2020](https://user-images.githubusercontent.com/10706020/74589056-5d823000-5045-11ea-854c-2e34a189c987.png)
+![input2](https://user-images.githubusercontent.com/10706020/74589056-5d823000-5045-11ea-854c-2e34a189c987.png)
 	
