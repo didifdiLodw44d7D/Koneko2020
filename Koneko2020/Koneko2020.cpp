@@ -265,15 +265,6 @@ void ParseJson(const char* str, char* element, std::map<std::string, std::string
 					v = "ne";
 			}
 
-			/*
-			if (-1 != row && -1 != col)
-			{
-				//nowPoint = board->evaluation[ToArrayNum(row, col)];
-				board->value[ToArrayNum(row, col)] = v;
-				board->evaluation[ToArrayNum(row, col)] = -1;
-			}
-			*/
-
             ParseJson(value, element, pair, board);
 
             i++;
@@ -319,15 +310,6 @@ void ParseJson(const char* str, char* element, std::map<std::string, std::string
 					v = "ne";
 			}
 
-			/*
-			if (-1 != row && -1 != col)
-			{
-				//nowPoint = board->evaluation[ToArrayNum(row, col)];
-				board->value[ToArrayNum(row, col)] = v;
-				board->evaluation[ToArrayNum(row, col)] = -1;
-			}
-			*/
-
 			ParseJson(value, element, pair, board);
 
 			i++;
@@ -343,31 +325,6 @@ PRINT:
 
 	PrintBoard(board);
 }
-
-/*
-{
-    "match request": "OK",
-    "size": 3,
-    "board":
-    {
-        "1":
-        {
-            "row": 3,
-            "col": 3
-        },
-        "2":
-        {
-            "row": 4,
-            "col": 4
-        },
-        "3":
-        {
-            "row": 5,
-            "col": 5
-        }
-    }
-}
-*/
 
 void JsonEntry(const char* json, std::map<std::string, std::string> *pair, Board *board)
 {
@@ -387,43 +344,31 @@ int Random(int max, int seed)
 
 void Double(int N, int MIN, int MAX, std::vector<int>* array)
 {
-	// 乱数生成用変数
 	int rnd;
-	// データ検索フラグ
 	int bFind;
-	// ループカウンタ
 	int i, j;
 
-	// 乱数シード初期化
 	srand((unsigned)time(NULL));
 
 	for (i = 0; i < N; i++)
 	{
 		do
 		{
-			// フラグ初期化
 			bFind = 0;
-			// 乱数生成
+
 			rnd = rand() % (MAX - MIN) + MIN;
-			// データ中に生成した乱数と同値のデータがないか確認
+
 			for (j = 0; j < i; j++)
 			{
-				// データ中に見つかった場合
 				if (array->at(j) == rnd)
 				{
-					// フラグを立てて再度乱数を生成する
 					bFind = 1;
 					break;
 				}
 			}
 		} while (bFind);
-		// データに生成した乱数を保存する
 		array->push_back(rnd);
 	}
-
-	// 生成した乱数を出力する
-	for (int s : *array)
-		std::cout << s << std::endl;
 }
 
 int makeJson(char *json, Board *board)
@@ -1040,18 +985,6 @@ int CalcPoint(Board* board, Cell* nowPos, std::string value)
 	int dir_4 = SearchPointByDirection(board, nowPos, value, 4);
 	int dir_7 = SearchPointByDirection(board, nowPos, value, 7);
 
-	/*
-		std::cout << "[" << nowPos->row << "," << nowPos->col << "]" << std::endl;
-		std::cout << "dir_8 = " << dir_8 << std::endl;
-		std::cout << "dir_9 = " << dir_9 << std::endl;
-		std::cout << "dir_6 = " << dir_6 << std::endl;
-		std::cout << "dir_3 = " << dir_3 << std::endl;
-		std::cout << "dir_2 = " << dir_2 << std::endl;
-		std::cout << "dir_1 = " << dir_1 << std::endl;
-		std::cout << "dir_4 = " << dir_4 << std::endl;
-		std::cout << "dir_7 = " << dir_7 << std::endl << std::endl;
-	*/
-
 	if (dir_8 == dir_2)
 		p += dir_8;
 	else if (dir_8 > dir_2)
@@ -1109,11 +1042,6 @@ void makeJsonMyPoint(Board* board, int row, int col, std::string value, int poin
 	strcat(cpu_sashite, pointStr);
 
 	strcat(cpu_sashite, "}}");
-
-	//nowPoint = board->evaluation[ToArrayNum(row, col)];
-
-	//board->value[ToArrayNum(row, col)] = value;
-	//board->evaluation[ToArrayNum(row, col)] = -1;
 }
 
 void GetPoint(Board* board, int *row, int *col, std::string value, int *point)
@@ -1155,10 +1083,6 @@ void GetPoint(Board* board, int *row, int *col, std::string value, int *point)
 
 				delete(nowPos);
 			}
-			else
-			{
-				//b1->evaluation[ToArrayNum(i, j)] = -1;
-			}
 
 			if (b2->value[ToArrayNum(i, j)] == "")
 			{
@@ -1174,12 +1098,6 @@ void GetPoint(Board* board, int *row, int *col, std::string value, int *point)
 
 				delete(nowPos);
 			}
-			else
-			{
-				//b2->evaluation[ToArrayNum(i, j)] = -1;
-			}
-
-			std::cout << "[" << i << "," << j << "]" << " : " << b1->evaluation[ToArrayNum(i, j)] << " : " << b2->evaluation[ToArrayNum(i, j)] << std::endl;
 		}
 	}
 
@@ -1188,8 +1106,6 @@ void GetPoint(Board* board, int *row, int *col, std::string value, int *point)
 	int dec_row2 = 0;
 	int dec_col2 = 0;
 
-	std::cout << "********************************************************" << std::endl;
-	std::cout << value << std::endl;
 	if ("ko" == value)
 	{
 		p1 = b1->evaluation[ToArrayNum(*row, *col)];
@@ -1216,7 +1132,6 @@ DECISION:
 
 		board->evaluation[ToArrayNum(dec_row1, dec_col1)] = p1;
 
-		std::cout << "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" << std::endl;
 		std::cout << p1 << std::endl;
 		std::cout << p2 << std::endl;
 	}
@@ -1228,7 +1143,6 @@ DECISION:
 
 		board->evaluation[ToArrayNum(dec_row2, dec_col2)] = p2;
 
-		std::cout << "BBBB" << std::endl;
 		std::cout << p1 << std::endl;
 		std::cout << p2 << std::endl;
 	}
@@ -1280,10 +1194,6 @@ void SearchMovePoint(Board* board, char* cpu_sashite, int flag)
 
 				delete(nowPos);
 			}
-			else
-			{
-				//b1->evaluation[ToArrayNum(i, j)] = -1;
-			}
 
 			if (b2->value[ToArrayNum(i, j)] == "")
 			{
@@ -1298,10 +1208,6 @@ void SearchMovePoint(Board* board, char* cpu_sashite, int flag)
 				b2->value[ToArrayNum(i, j)] = "";
 
 				delete(nowPos);
-			}
-			else
-			{
-				//b2->evaluation[ToArrayNum(i, j)] = -1;
 			}
 
 			std::cout << "[" << i << "," << j << "]" << " : " << b1->evaluation[ToArrayNum(i, j)] << " : " << b2->evaluation[ToArrayNum(i, j)] << std::endl;
@@ -1353,13 +1259,11 @@ void SearchMovePoint(Board* board, char* cpu_sashite, int flag)
 	if ("ko" == value)
 	{
 		itoa(b1->evaluation[ToArrayNum(row, col)], pointStr, 10);
-		//GetPoint(b1, &row, &col, value, &p);
 		nowPoint = p;
 	}
 	else
 	{
 		itoa(b2->evaluation[ToArrayNum(row, col)], pointStr, 10);
-		//GetPoint(b2, &row, &col, value, &p);
 		nowPoint = p;
 	}
 
@@ -1394,16 +1298,6 @@ void SearchMovePoint(Board* board, char* cpu_sashite, int flag)
 
 int main()
 {
-    /*
-    const char *json = "{\"match request\": \"OK\", \"size\": 3, \"board\": {\"1\": {\"row\": 3, \"col\": 3}, \"2\": {\"row\": 4, \"col\": 4}, \"3\": {\"row\": 5, \"col\": 5}}}";
-
-    char element[1024];
-
-    std::map<std::string, std::string> p;
-
-    ParseJson(json, element, &p);
-    */
-
 	Board* board = new Board();
 
     WSADATA wsaData;
@@ -1451,59 +1345,52 @@ int main()
 
 		int myPoint = 0;
 
-        std::map<std::string, std::string> p;
+		std::map<std::string, std::string> p;
 
-        char buffer[1024];
-        char recvJson[1024];
+		char buffer[1024];
+		char recvJson[1024];
 
-        memset(buffer, 0, sizeof(1024));
+		memset(buffer, 0, sizeof(1024));
 
-        int fileNameLength = recv(sock, buffer, 1024, 0);
+		int fileNameLength = recv(sock, buffer, 1024, 0);
 
-        int i;
-        for (i = 0; i < fileNameLength; i++)
-            recvJson[i] = buffer[i];
+		int i;
+		for (i = 0; i < fileNameLength; i++)
+			recvJson[i] = buffer[i];
 
-        recvJson[++i] = '\0';
+		recvJson[++i] = '\0';
 
-        JsonEntry(recvJson, &p, board);
+		JsonEntry(recvJson, &p, board);
 
 		char response[1024];
 
 		int responseLen;
 
-        if(cnt == 1)
-        {
-            char sendJson[4096];
-            makeJson(sendJson, board);
+		if (cnt == 1)
+		{
+			char sendJson[4096];
+			makeJson(sendJson, board);
 
-            std::cout << sendJson << std::endl;
-
-            responseLen = std::strlen(sendJson);
-            send(sock, sendJson, responseLen, 0);
+			responseLen = std::strlen(sendJson);
+			send(sock, sendJson, responseLen, 0);
 
 			SearchMovePoint(board, response, 0);
-        }
+		}
 		/*
-        else if (cnt == 4)
-        {
-            send(sock, "disconnect", 10, 0);
-        }
+		else if (cnt == 4)
+		{
+			send(sock, "disconnect", 10, 0);
+		}
 		*/
 		else
 		{
 			SearchMovePoint(board, response, 0);
-
-			std::cout << "shironeko" << std::endl;
-			PrintBoard(board);
 
 			try
 			{
 				std::string rowS = p.at("row");
 				std::string colS = p.at("col");
 				std::string valS = p.at("value");
-
-				std::cout << "CcccccCcccc = " << valS << std::endl;
 
 				int r = atoi(rowS.c_str());
 				int c = atoi(colS.c_str());
@@ -1516,14 +1403,6 @@ int main()
 				myPoint = p;
 
 				board->value[ToArrayNum(r, c)] = valS;
-
-				std::cout << "kuroneko" << std::endl;
-				PrintBoard(board);
-				DebugMasu(board);
-
-				//board->evaluation[ToArrayNum(r, c)] = -1;
-
-
 			}
 			catch (std::exception & e)
 			{
@@ -1536,36 +1415,30 @@ int main()
 			std::string colS = p.at("col");
 			std::string valS = p.at("value");
 
-			
+
 
 			board->value[ToArrayNum(atoi(rowS.c_str()), atoi(colS.c_str()))] = valS;
 
-			//myPoint = board->evaluation[ToArrayNum(atoi(rowS.c_str()), atoi(colS.c_str()))];
-
-			board->evaluation[ToArrayNum(atoi(rowS.c_str()), atoi(colS.c_str()))] = -100;
-
-			//std::cout << "rowS = " << rowS << " : " << "colS = " << colS << " : " << "valS = " << valS << std::endl;
+			board->evaluation[ToArrayNum(atoi(rowS.c_str()), atoi(colS.c_str()))] = -1;
 
 			makeJsonMyPoint(board, atoi(rowS.c_str()), atoi(colS.c_str()), valS, myPoint, response);
 
 			responseLen = std::strlen(response);
-
-			//std::cout << response << std::endl;
 
 			send(sock, response, responseLen, 0);
 		}
 
 		std::cout << "Second" << std::endl;
 
-        memset(buffer, 0, sizeof(1024));
+		memset(buffer, 0, sizeof(1024));
 
-        fileNameLength = recv(sock, buffer, 1024, 0);
+		fileNameLength = recv(sock, buffer, 1024, 0);
 
-        i;
-        for (i = 0; i < fileNameLength; i++)
-            recvJson[i] = buffer[i];
+		i;
+		for (i = 0; i < fileNameLength; i++)
+			recvJson[i] = buffer[i];
 
-        recvJson[++i] = '\0';
+		recvJson[++i] = '\0';
 
 		if (cnt != 1)
 		{
@@ -1584,18 +1457,18 @@ int main()
 			send(sock, "OK", 2, 0);
 		}
 
-TO_TWO:
-		
+	TO_TWO:
+
 		cnt++;
-    } 
+	}
 
 	delete(board);
 
-    closesocket(sock);
+	closesocket(sock);
 
-    WSACleanup();
+	WSACleanup();
 
-    return 0;
+	return 0;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
